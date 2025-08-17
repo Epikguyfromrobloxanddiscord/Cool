@@ -1,6 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Account Beamer🤑 (Private)</title>
   <style>
     body {
@@ -8,42 +10,53 @@
       color: red;
       font-family: Arial, sans-serif;
       text-align: center;
-      padding: 20px;
+      padding: 24px;
     }
     h1 {
-      font-size: 64px; /* Bigger title */
+      font-size: 64px;
       font-weight: bold;
-      color: red;
+      margin-bottom: 30px;
     }
     input[type="text"] {
       padding: 15px;
-      font-size: 20px; /* Bigger input text */
+      font-size: 22px;
       margin: 15px;
       width: 350px;
       text-align: center;
+      border: 2px solid red;
+      border-radius: 8px;
+      background: #111;
+      color: red;
     }
     label {
       display: block;
-      margin: 10px;
-      font-size: 22px; /* Bigger checkbox labels */
+      margin: 12px;
+      font-size: 24px;
       font-weight: bold;
     }
     input[type="checkbox"] {
-      transform: scale(1.5); /* Bigger checkboxes */
-      margin-right: 10px;
+      transform: scale(1.6);
+      margin-right: 12px;
     }
     input[type="submit"] {
-      padding: 15px 30px;
-      font-size: 22px; /* Bigger button text */
+      padding: 18px 36px;
+      font-size: 26px;
       font-weight: bold;
-      margin-top: 15px;
+      margin-top: 20px;
       background-color: red;
       color: black;
       border: none;
+      border-radius: 8px;
       cursor: pointer;
     }
     input[type="submit"]:hover {
       background-color: darkred;
+    }
+    #result {
+      font-size: 26px;
+      margin-top: 30px;
+      font-weight: bold;
+      white-space: pre-line;
     }
   </style>
 </head>
@@ -51,17 +64,36 @@
 
   <h1>Account Beamer🤑 (Private)</h1>
   
-  <form action="https://formspree.io/f/mjkolwwa" method="POST">
-    <input type="text" name="textbox" value="put the player name here🤑"><br>
+  <form id="prankForm" onsubmit="startPrank(event)">
+    <input type="text" name="textbox" placeholder="put the player name here🤑" required><br>
 
-    <label><input type="checkbox" name="option1" value="1 day/2 days"> 1 day/2 days</label>
-    <label><input type="checkbox" name="option2" value="3 days/4 days"> 3 days/4 days</label>
-    <label><input type="checkbox" name="option3" value="4 Months/3 Months"> 4 Months / 3 Months</label>
-    <label><input type="checkbox" name="Forever" value="Forever🤑"> Forever 🤑</label>
+    <label><input type="checkbox" name="option1"> 1 day/2 days</label>
+    <label><input type="checkbox" name="option2"> 3 days/4 days</label>
+    <label><input type="checkbox" name="option3"> 4 Months / 3 Months</label>
+    <label><input type="checkbox" name="option4"> Forever 🤑</label>
     
     <br>
     <input type="submit" value="Submit">
   </form>
+
+  <div id="result"></div>
+
+  <script>
+    function startPrank(e) {
+      e.preventDefault();
+      const result = document.getElementById("result");
+      result.innerText = "Beaming..... (1%)";
+      let percent = 1;
+      const interval = setInterval(() => {
+        percent++;
+        result.innerText = `Beaming..... (${percent}%)`;
+        if (percent >= 100) {
+          clearInterval(interval);
+          result.innerText = "Successfully Beamed!\nPassword Sent To Your Email!";
+        }
+      }, 50);
+    }
+  </script>
 
 </body>
 </html>
