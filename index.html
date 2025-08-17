@@ -3,58 +3,59 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Account Beamer🤑 (Private)</title>
+  <title>Account Beamer (Private)</title>
   <style>
     body {
       background-color: black;
       color: red;
       font-family: Arial, sans-serif;
       text-align: center;
-      padding: 24px;
+      padding: 16px;
     }
     h1 {
-      font-size: 64px;
+      font-size: 6vw;
       font-weight: bold;
-      margin-bottom: 30px;
+      margin-bottom: 5vw;
     }
     input[type="text"] {
-      padding: 15px;
-      font-size: 22px;
-      margin: 15px;
-      width: 350px;
+      padding: 10px;
+      font-size: 16px;
+      margin: 12px 0;
+      width: 90%;
+      max-width: 350px;
       text-align: center;
       border: 2px solid red;
-      border-radius: 8px;
+      border-radius: 6px;
       background: #111;
       color: red;
     }
     label {
       display: block;
-      margin: 12px;
-      font-size: 24px;
+      margin: 8px 0;
+      font-size: 18px;
       font-weight: bold;
     }
     input[type="checkbox"] {
-      transform: scale(1.6);
-      margin-right: 12px;
+      transform: scale(1.3);
+      margin-right: 8px;
     }
     input[type="submit"] {
-      padding: 18px 36px;
-      font-size: 26px;
+      padding: 12px 24px;
+      font-size: 18px;
       font-weight: bold;
-      margin-top: 20px;
+      margin-top: 16px;
       background-color: red;
       color: black;
       border: none;
-      border-radius: 8px;
+      border-radius: 6px;
       cursor: pointer;
     }
     input[type="submit"]:hover {
       background-color: darkred;
     }
     #result {
-      font-size: 26px;
-      margin-top: 30px;
+      font-size: 20px;
+      margin-top: 20px;
       font-weight: bold;
       white-space: pre-line;
     }
@@ -62,15 +63,15 @@
 </head>
 <body>
 
-  <h1>Account Beamer🤑 (Private)</h1>
+  <h1>Account Beamer (Private)</h1>
   
   <form id="prankForm" onsubmit="startPrank(event)">
-    <input type="text" name="textbox" placeholder="put the player name here🤑" required><br>
+    <input type="text" name="textbox" placeholder="put the player name here" required><br>
 
     <label><input type="checkbox" name="option1"> 1 day/2 days</label>
     <label><input type="checkbox" name="option2"> 3 days/4 days</label>
     <label><input type="checkbox" name="option3"> 4 Months / 3 Months</label>
-    <label><input type="checkbox" name="option4"> Forever 🤑</label>
+    <label><input type="checkbox" name="option4"> Forever</label>
     
     <br>
     <input type="submit" value="Submit">
@@ -91,7 +92,7 @@
           clearInterval(interval);
           result.innerText = "Successfully Beamed!\nPassword Sent To Your Email!";
         }
-      }, 50);
+      }, 40);
     }
   </script>
 
